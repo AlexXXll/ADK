@@ -1,3 +1,5 @@
+import time
+
 import pyowm
 import telebot
 
@@ -5,6 +7,12 @@ owm = pyowm.OWM('6d00d1d4e704068d70191bad2673e0cc',
  language='ru')
 bot = telebot.TeleBot(
 	"856642659:AAHMG_bDoiASY9-gjL2dG1zBnqJTwSiZJMs")
+
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+	bot.reply_to(message, "Join casinoXXX")
+	time.sleep(1)
+	bot.reply_to(message, "Join casinoXXX")
 
 @bot.message_handler(content_types=['text'])
 def send_echo(msg):
