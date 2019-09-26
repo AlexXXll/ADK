@@ -23,10 +23,10 @@ def send_echo(msg):
 	res += "В " + message + "е " + " сейчас " \
 	+ w.get_detailed_status()
 	res += "\nТемпература сейчас " + str(temp) + "°C"
-	res += "\nПогода на неделю" 
+	res += "\nПогода на неделю\n" 
 	res += ''.join([weather.get_reference_time('date').strftime("%d-%b-%Y (%H:%M:%S.%f)") + 
 		weather.get_detailed_status() + 
-		str(weather.get_temperature('celsius')) + "°C"\
+		str(weather.get_temperature('celsius')) + "°C\n"\
 		 for weather in f])
 
 	bot.reply_to(msg, res)
