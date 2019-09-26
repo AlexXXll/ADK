@@ -10,9 +10,9 @@ bot = telebot.TeleBot(
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to((), "Join casinoXXX")
+	bot.send_message("Join casinoXXX")
 	time.sleep(2)
-	bot.reply_to((), "Шучу, напиши в каком городе тебя погода интересует?")
+	bot.send_message("Шучу, напиши в каком городе тебя погода интересует?")
 
 @bot.message_handler(content_types=['text'])
 def send_echo(msg):
