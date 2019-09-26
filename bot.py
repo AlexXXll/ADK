@@ -1,9 +1,10 @@
+import pyowm
+from pyowm.exceptions import api_response_error
+
 import time
 
-import pyowm
 import telebot
 
-from pyowm.exceptions import api_response_error
 
 owm = pyowm.OWM('6d00d1d4e704068d70191bad2673e0cc',
  language='ru')
