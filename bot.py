@@ -31,4 +31,4 @@ def send_echo(msg):
 
 	bot.reply_to(msg, res)
 
-	bot.polling( none_stop = True )
+bot.polling( none_stop = True )
