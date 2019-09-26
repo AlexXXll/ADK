@@ -27,6 +27,12 @@ def send_echo(msg):
 
 	temp = w.get_temperature('celsius')["temp"]
 
+try:
+    owm.weather_at_place(place)
+except pyowm.exceptions.api_response_error.NotFoundError
+    res """Не братка, это не город, а видимо набор бессвязных символов, ты шо в двоичном коде набираешь название города? Отдохни 5 сек)"""
+    time.sleep(5)
+
 	res = ""
 	res += "В " + message + "е " + " сейчас " \
 	+ w.get_detailed_status()
