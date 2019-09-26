@@ -31,7 +31,7 @@ def send_echo(msg):
 		temp = w.get_temperature('celsius')["temp"]
 
 	except api_response_error.NotFoundError:
-    	bot.reply_to(messege, "Не братка, это не город, а видимо набор бессвязных символов, ты шо в двоичном коде набираешь название города? Отдохни 5 сек)")
+    	bot.reply_to(message, "Не братка, это не город,\n а видимо набор бессвязных символов.\n Ты шо в двоичном коде набираешь название города?\n Отдохни 5 сек)\n")
     	time.sleep(5)
 
 	res = ""
