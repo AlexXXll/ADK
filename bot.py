@@ -15,23 +15,25 @@ def send_welcome(message):
 	bot.send_message(message.chat.id, "Шучу, напиши в каком городе тебя погода интересует?")
 
 @bot.message_handler(content_types=['text'])
+
+from pyowm.exceptions import api_response_error
+
 def send_echo(msg):
-	message = msg.text
-	fc = owm.daily_forecast(message, limit=7)
+	try:
+		message = msg.text
+		fc = owm.daily_forecast(message, limit=7)
 
-	f = fc.get_forecast()
+		f = fc.get_forecast()
 
-	observation = owm.weather_at_place(message)
+		observation = owm.weather_at_place(message)
 
-	w = observation.get_weather()
+		w = observation.get_weather()
 
-	temp = w.get_temperature('celsius')["temp"]
+		temp = w.get_temperature('celsius')["temp"]
 
-try:
-    owm.weather_at_place(place)
-except pyowm.exceptions.api_response_error.NotFoundError
-    res """Не братка, это не город, а видимо набор бессвязных символов, ты шо в двоичном коде набираешь название города? Отдохни 5 сек)"""
-    time.sleep(5)
+	except api_response_error.NotFoundError
+    	bot.reply_to(messege, "Не братка, это не город, а видимо набор бессвязных символов, ты шо в двоичном коде набираешь название города? Отдохни 5 сек)")
+    	time.sleep(5)
 
 	res = ""
 	res += "В " + message + "е " + " сейчас " \
