@@ -24,7 +24,7 @@ def send_echo(msg):
 	+ w.get_detailed_status()
 	res += "\nТемпература сейчас " + str(temp) + "°C"
 	res += "\nПогода на неделю" 
-	res += ''.join([weather.get_reference_time('date') + 
+	res += ''.join([weather.get_reference_time('date').strftime() + 
 		weather.get_detailed_status() + 
 		str(weather.get_temperature('celsius')) + "°C"\
 		 for weather in f])
