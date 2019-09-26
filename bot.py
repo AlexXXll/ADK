@@ -3,6 +3,8 @@ import time
 import pyowm
 import telebot
 
+from pyowm.exceptions import api_response_error
+
 owm = pyowm.OWM('6d00d1d4e704068d70191bad2673e0cc',
  language='ru')
 bot = telebot.TeleBot(
@@ -15,9 +17,6 @@ def send_welcome(message):
 	bot.send_message(message.chat.id, "Шучу, напиши в каком городе тебя погода интересует?")
 
 @bot.message_handler(content_types=['text'])
-
-from pyowm.exceptions import api_response_error
-
 def send_echo(msg):
 	try:
 		message = msg.text
