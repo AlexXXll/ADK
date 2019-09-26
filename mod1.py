@@ -14,11 +14,11 @@ w = observation.get_weather()
 
 temp = w.get_temperature('celsius')["temp"]
 
-print( "В " + place + "е " + " сейчас " + w.get_detailed_status())
+print("В " + place + "е " + " сейчас " + w.get_detailed_status())
 
-print( "Температура сейчас " + str(temp) + "°C")
+print("Температура сейчас " + str(temp) + "°C")
 
-print( "Погода на неделю ")
+print("Погода на неделю ")
 
 for weather in f:
 	print (weather.get_reference_time('date'),weather.get_detailed_status(),str(weather.get_temperature('celsius')) + "°C")
